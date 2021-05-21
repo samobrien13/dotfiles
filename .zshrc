@@ -1,8 +1,9 @@
-export SAILTHRU_HOME=/Users/swo2690/Documents/git/sailthru/dev
-alias doco='docker-compose -f $SAILTHRU_HOME/devtools/containers/docker-compose.yml'
-alias moco='docker-compose -f $SAILTHRU_HOME/devtools/containers/docker-compose.yml -f $SAILTHRU_HOME/devtools/containers/mobile-docker-compose.yml'
-source $SAILTHRU_HOME/devtools/utilities/profile_utils.sh
-export SITE_DOMAIN='sailthru-sb.com'
+# Set GIT_HOME folder
+export GIT_HOME=/Users/swo2690/Documents/git
+
+# Set alias for dotfiles config
+# curl -Lks http://bit.do/cfg-init | /bin/bash
+alias config='/usr/bin/git --git-dir=/Users/swo2690/.cfg/ --work-tree=/Users/swo2690'
 
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -111,4 +112,3 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias config='/usr/bin/git --git-dir=/Users/swo2690/.cfg/ --work-tree=/Users/swo2690'

@@ -1,0 +1,10 @@
+syntax on
+set ignorecase
+set hlsearch
+set incsearch 
+set noswapfile
+set shiftwidth=4
+set tabstop=4
+set expandtab
+set number
+inoremap jk <Esc>

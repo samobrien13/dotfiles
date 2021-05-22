@@ -1,20 +1,23 @@
 # Set GIT_HOME folder
-export GIT_HOME=/Users/swo2690/Documents/git
+export GIT_HOME=/Users/samobien/Documents/git
 
 # Set alias for dotfiles config
 # curl -Lks http://bit.do/cfg-init | /bin/bash
-alias config='/usr/bin/git --git-dir=/Users/swo2690/.cfg/ --work-tree=/Users/swo2690'
+alias config='/usr/bin/git --git-dir=/Users/samobrien/.cfg/ --work-tree=/Users/samobrien'
 
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# Homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/swo2690/.oh-my-zsh"
+export ZSH="/Users/samobrien/.oh-my-zsh"
 
 # Init RBENV
-export PATH=~/.rbenv/shims:$PATH
-export PATH=~/.rbenv/completions/rbenv.zsh:$PATH
-eval "$(rbenv init -)"
+# export PATH=~/.rbenv/shims:$PATH
+# export PATH=~/.rbenv/completions/rbenv.zsh:$PATH
+# eval "$(rbenv init -)"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,

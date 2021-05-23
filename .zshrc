@@ -1,6 +1,7 @@
 # Set GIT_HOME folder
 export GIT_HOME=/Users/samobien/Documents/git
-
+export DOVETAIL_HOME=/Users/samobrien/Documents/git/dovetail 
+export KFC_HOME=/Users/samobrien/Documents/git/kfc
 # Set alias for dotfiles config
 # curl -Lks http://bit.do/cfg-init | /bin/bash
 alias config='/usr/bin/git --git-dir=/Users/samobrien/.cfg/ --work-tree=/Users/samobrien'
@@ -10,6 +11,9 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Ruby
+eval "$(rbenv init -)"
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/samobrien/.oh-my-zsh"

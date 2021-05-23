@@ -1,0 +1,11 @@
+{
+    "workbench.editorAssociations": [
+    
+    ],
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "k"],
+            "after": ["<Esc>"]
+        }
+    ]
+}

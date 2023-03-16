@@ -1,6 +1,7 @@
 # Set GIT_HOME folder
 export GIT_HOME=/Users/samobien/Documents/git
 export DOVETAIL_HOME=/Users/samobrien/Documents/git/dovetail 
+export AFTERPAY_HOME=/Users/samobrien/Documents/git/dovetail/afterpay 
 export KFC_HOME=/Users/samobrien/Documents/git/kfc
 # Set alias for dotfiles config
 # curl -Lks http://bit.do/cfg-init | /bin/bash
@@ -32,6 +33,9 @@ export ZSH="/Users/samobrien/.oh-my-zsh"
 
 # Java
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home"
+
+# direnv
+eval "$(direnv hook zsh)"
 
 # Init RBENV
 # export PATH=~/.rbenv/shims:$PATH
@@ -135,3 +139,8 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 
+
+# pnpm
+export PNPM_HOME="/Users/samobrien/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end

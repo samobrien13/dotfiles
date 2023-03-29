@@ -1,8 +1,6 @@
 # Set GIT_HOME folder
 export GIT_HOME=/Users/samobien/Documents/git
-export DOVETAIL_HOME=/Users/samobrien/Documents/git/dovetail 
-export AFTERPAY_HOME=/Users/samobrien/Documents/git/dovetail/afterpay 
-export KFC_HOME=/Users/samobrien/Documents/git/kfc
+
 # Set alias for dotfiles config
 # curl -Lks http://bit.do/cfg-init | /bin/bash
 alias config='/usr/bin/git --git-dir=/Users/samobrien/.cfg/ --work-tree=/Users/samobrien'
@@ -23,10 +21,6 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
-
-# N
-export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
-export PATH="$N_PREFIX/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/samobrien/.oh-my-zsh"

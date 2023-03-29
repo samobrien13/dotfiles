@@ -4,6 +4,6 @@
  
 ## Installation
 
-1. git clone --bare https://github.com/samobrien13/dotfiles.git $HOME/.cfg
-2. alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-3. dotfiles checkout
+1. `git clone --bare https://github.com/samobrien13/dotfiles.git $HOME/.cfg`
+2. `alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'`
+3. `dotfiles checkout`

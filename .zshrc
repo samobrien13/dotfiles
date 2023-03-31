@@ -31,6 +31,14 @@ export JAVA_HOME="/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents
 # direnv
 eval "$(direnv hook zsh)"
 
+# nvm
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+# local bin
+export PATH=$HOME/.local/scripts:$PATH
+bindkey -s ^f "tmux-sessionizer\n"
+
 # Init RBENV
 # export PATH=~/.rbenv/shims:$PATH
 # export PATH=~/.rbenv/completions/rbenv.zsh:$PATH
@@ -138,3 +146,13 @@ source $ZSH/oh-my-zsh.sh
 export PNPM_HOME="/Users/samobrien/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+if [ -z "$TMUX" ]
+then
+    tmux attach -t TMUX || tmux new -s TMUX
+fi
+alias dotfiles='/usr/bin/git --git-dir=/Users/samobrien/.dotfiles/ --work-tree=/Users/samobrien'

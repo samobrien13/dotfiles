@@ -4,11 +4,17 @@ set hlsearch
 set incsearch 
 set noswapfile
 set shiftwidth=4
-set tabstop=4
 set expandtab
 set number
 set relativenumber
 inoremap jk <Esc>
 nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
+vnoremap ∆ :m '>+1<CR>gv=gv
+vnoremap ˚ :m '>-2<CR>gv=gv
 
+
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>

@@ -14,6 +14,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # Ruby
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 
 # Android
 export ANDROID_HOME=$HOME/Library/Android/sdk

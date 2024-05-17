@@ -84,7 +84,7 @@ local FileNameModifer = {
     hl = function()
         if vim.bo.modified then
             -- use `force` because we need to override the child's hl foreground
-            return { fg = "cyan", bold = true, force=true }
+            return { fg = "cyan", bold = true, force = true }
         end
     end,
 }
@@ -94,20 +94,18 @@ FileNameBlock = utils.insert(FileNameBlock,
     FileIcon,
     utils.insert(FileNameModifer, FileName), -- a new table where FileName is a child of FileNameModifier
     FileFlags,
-    { provider = '%<'} -- this means that the statusline is cut here when there's not enough space
+    { provider = '%<' }                      -- this means that the statusline is cut here when there's not enough space
 )
 
 local Git = {
     condition = conditions.is_git_repo,
-
     init = function(self)
         self.status_dict = vim.b.gitsigns_status_dict
         self.has_changes = self.status_dict.added ~= 0 or self.status_dict.removed ~= 0 or self.status_dict.changed ~= 0
     end,
-
     hl = { fg = "orange" },
-
-    {   -- git branch name
+    {
+      -- git branch name
         provider = function(self)
             return " " .. self.status_dict.head .. " "
         end,
@@ -147,7 +145,8 @@ local ViMode = {
     -- corresponding string and color. We can put these into `static` to compute
     -- them at initialisation time.
     static = {
-        mode_names = { -- change the strings if you like it vvvvverbose!
+        mode_names = {
+                       -- change the strings if you like it vvvvverbose!
             n = "NORMAL",
             no = "NORMAL?",
             nov = "NORMAL?",
@@ -184,19 +183,19 @@ local ViMode = {
             t = "T",
         },
         mode_colors = {
-            n = "red" ,
+            n = "red",
             i = "green",
             v = "cyan",
-            V =  "cyan",
-            ["\22"] =  "cyan",
-            c =  "orange",
-            s =  "purple",
-            S =  "purple",
-            ["\19"] =  "purple",
-            R =  "orange",
-            r =  "orange",
-            ["!"] =  "red",
-            t =  "red",
+            V = "cyan",
+            ["\22"] = "cyan",
+            c = "orange",
+            s = "purple",
+            S = "purple",
+            ["\19"] = "purple",
+            R = "orange",
+            r = "orange",
+            ["!"] = "red",
+            t = "red",
         }
     },
     -- We can now access the value of mode() that, by now, would have been
@@ -207,7 +206,7 @@ local ViMode = {
     -- control the padding and make sure our string is always at least 2
     -- characters long. Plus a nice Icon.
     provider = function(self)
-        return " %2("..self.mode_names[self.mode].."%) "
+        return " %2(" .. self.mode_names[self.mode] .. "%) "
     end,
     -- Same goes for the highlight. Now the foreground will change according to the current mode.
     hl = function(self)

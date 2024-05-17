@@ -1,9 +1,9 @@
 # Set GIT_HOME folder
 export GIT_HOME=/Users/samobien/Documents/git
 
-# Set alias for dotfiles config
-# curl -Lks http://bit.do/cfg-init | /bin/bash
-alias config='/usr/bin/git --git-dir=/Users/samobrien/.cfg/ --work-tree=/Users/samobrien'
+# export LC_CTYPE=C
+# export LANG=C
+alias tmux='tmux -u'
 
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -16,6 +16,9 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 
+# Postgres
+export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
+
 # Android
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
@@ -27,7 +30,24 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 export ZSH="/Users/samobrien/.oh-my-zsh"
 
 # Java
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"
+
+# pnpm
+export PNPM_HOME="/Users/samobrien/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+if [ -z "$TMUX" ]
+then
+    tmux attach -t TMUX || tmux new -s TMUX
+fi
+
+# https://fwuensche.medium.com/how-to-manage-your-dotfiles-with-git-f7aeed8adf8b
+alias dotfiles='/usr/bin/git --git-dir=/Users/samobrien/.dotfiles/ --work-tree=/Users/samobrien'
 
 # direnv
 eval "$(direnv hook zsh)"
@@ -123,11 +143,7 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+export EDITOR="nvim"
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -142,18 +158,3 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 
-
-# pnpm
-export PNPM_HOME="/Users/samobrien/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-# pnpm end
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-if [ -z "$TMUX" ]
-then
-    tmux attach -t TMUX || tmux new -s TMUX
-fi
-alias dotfiles='/usr/bin/git --git-dir=/Users/samobrien/.dotfiles/ --work-tree=/Users/samobrien'

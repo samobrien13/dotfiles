@@ -26,10 +26,15 @@ autocmd('TextYankPost', {
     end,
 })
 
-autocmd({"BufWritePre"}, {
+autocmd({ "BufWritePre" }, {
     group = ThePrimeagenGroup,
     pattern = "*",
     command = [[%s/\s\+$//e]],
+})
+
+autocmd({ "BufWritePre" }, {
+    pattern = "*",
+    callback = function(args) vim.lsp.buf.format() end,
 })
 
 vim.g.netrw_browse_split = 0

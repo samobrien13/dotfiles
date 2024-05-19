@@ -17,7 +17,7 @@ eval "$(rbenv init -)"
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 
 # Postgres
-export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
+export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
 
 # Android
 export ANDROID_HOME=$HOME/Library/Android/sdk
@@ -38,8 +38,8 @@ export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 if [ -z "$TMUX" ]
 then
@@ -156,5 +156,3 @@ export EDITOR="nvim"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-

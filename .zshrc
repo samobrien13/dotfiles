@@ -12,8 +12,6 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Ruby
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 
 # Postgres
@@ -32,14 +30,10 @@ export ZSH="/Users/samobrien/.oh-my-zsh"
 # Java
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"
 
-# pnpm
-export PNPM_HOME="/Users/samobrien/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-# pnpm end
+# asdf
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+export COREPACK_ENABLE_AUTO_PIN=0
 
 if [ -z "$TMUX" ]
 then
@@ -51,10 +45,6 @@ alias dotfiles='/usr/bin/git --git-dir=/Users/samobrien/.dotfiles/ --work-tree=/
 
 # direnv
 eval "$(direnv hook zsh)"
-
-# nvm
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 # local bin
 export PATH=$HOME/.local/scripts:$PATH
@@ -156,3 +146,5 @@ export EDITOR="nvim"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+. /opt/homebrew/opt/asdf/libexec/asdf.sh

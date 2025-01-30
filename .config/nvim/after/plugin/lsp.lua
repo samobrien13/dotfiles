@@ -7,8 +7,10 @@ lsp.ensure_installed({
     'eslint',
     'lua_ls',
     'rust_analyzer',
-    'tsserver',
+    'ts_ls',
     'yamlls',
+    'solargraph',
+    'rubocop',
 })
 
 -- Fix Undefined global 'vim'

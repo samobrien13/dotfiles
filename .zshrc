@@ -11,6 +11,14 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
+# pnpm
+export PNPM_HOME="/Users/samobrien/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
 # Ruby
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 
@@ -147,4 +155,4 @@ export EDITOR="nvim"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
+

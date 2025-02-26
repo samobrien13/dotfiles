@@ -9,7 +9,7 @@ lsp.ensure_installed({
     'rust_analyzer',
     'ts_ls',
     'yamlls',
-    'solargraph',
+    'ruby_lsp',
     'rubocop',
 })
 

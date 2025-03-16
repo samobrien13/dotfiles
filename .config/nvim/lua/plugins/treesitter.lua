@@ -14,5 +14,8 @@ return {
             },
             indent = { enable = true },
         })
-    end
+    end,
+    dependencies = {
+        "nvim-treesitter/nvim-treesitter-context",
+    },
 }

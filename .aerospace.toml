@@ -212,7 +212,9 @@ automatically-unhide-macos-hidden-apps = false
 
 # 'workspace-to-monitor-force-assignment' declaration
 [workspace-to-monitor-force-assignment]
-    1 = 'main'                       # Main monitor
-    2 = 'secondary'                  # Secondary monitor
-    3 = 'secondary'                  # Secondary monitor
-    4 = 'secondary'                  # Secondary monitor
+    t = 'main'
+    w = 'secondary'
+    p = 'secondary'
+    s = 'secondary'
+    1 = 'secondary'
+    2 = 'main'

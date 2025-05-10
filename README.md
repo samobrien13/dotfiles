@@ -1,9 +1,10 @@
 # dotfiles
- 
-`https://fwuensche.medium.com/how-to-manage-your-dotfiles-with-git-f7aeed8adf8b`
- 
+
+`https://gist.github.com/andreibosco/cb8506780d0942a712fc`
+
 ## Installation
 
-1. `git clone --bare https://github.com/samobrien13/dotfiles.git $HOME/.cfg`
-2. `alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'`
-3. `dotfiles checkout`
+1. `git clone https://github.com/samobrien13/dotfiles.git`
+2. `brew install stow`
+3. `cd dotfiles`
+4. `stow <package>` (e.g. `stow zsh` or `stow nvim`)

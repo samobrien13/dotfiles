@@ -1,6 +1,7 @@
 # dotfiles
 
 `https://gist.github.com/andreibosco/cb8506780d0942a712fc`
+`https://tamerlan.dev/how-i-manage-my-dotfiles-using-gnu-stow/`
 
 ## Installation
 

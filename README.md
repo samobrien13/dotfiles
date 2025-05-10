@@ -7,4 +7,4 @@
 1. `git clone https://github.com/samobrien13/dotfiles.git`
 2. `brew install stow`
 3. `cd dotfiles`
-4. `stow <package>` (e.g. `stow zsh` or `stow nvim`)
+4. `stow . -D $HOME`

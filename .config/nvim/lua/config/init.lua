@@ -4,7 +4,6 @@ require("config.lazy")
 
 local augroup = vim.api.nvim_create_augroup
 local ThePrimeagenGroup = augroup('ThePrimeagen', {})
-local getClient = vim.lsp.get_client_by_id
 local autocmd = vim.api.nvim_create_autocmd
 local yank_group = augroup('HighlightYank', {})
 
@@ -39,7 +38,6 @@ autocmd({ "BufWritePre" }, {
 autocmd('LspAttach', {
     group = ThePrimeagenGroup,
     callback = function(args)
-        local client = assert(getClient(args.data.client_id))
         local opts = { buffer = args.buf }
         vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
         vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
@@ -51,34 +49,14 @@ autocmd('LspAttach', {
         vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
         vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
         vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
-
-        if not client:supports_method('textDocument/willSaveWaitUntil')
-            and client:supports_method('textDocument/formatting') then
-            vim.api.nvim_create_autocmd('BufWritePre', {
-                group = ThePrimeagenGroup,
-                buffer = args.buf,
-                callback = function()
-                    vim.lsp.buf.format({ bufnr = args.buf, id = client.id, timeout_ms = 1000 })
-                end
-            })
-        end
-
     end
+})
+
+autocmd({ "BufWritePre" }, {
+    pattern = "*",
+    callback = function() vim.lsp.buf.format() end,
 })
 
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
-
-vim.lsp.config('luals', {
-    cmd = { 'lua-language-server' },
-    filetypes = { 'lua' },
-    root_markers = { '.luarc.json', '.luarc.jsonc' },
-    settings = {
-        Lua = {
-            diagnostics = {
-                globals = { 'vim', 'ColorMyPencils' }
-            }
-        }
-    }
-})

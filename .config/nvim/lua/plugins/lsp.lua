@@ -24,6 +24,23 @@ return {
                 },
             },
         },
+        {
+            "nvimtools/none-ls.nvim",
+            dependencies = {
+                'MunifTanjim/prettier.nvim'
+            },
+            config = function()
+                local null_ls = require("null-ls")
+                local b = null_ls.builtins
+
+                null_ls.setup({
+                    sources = {
+                        b.formatting.prettier,
+                    },
+                })
+            end
+
+        }
     },
 
     config = function()

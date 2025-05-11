@@ -65,5 +65,16 @@ return {
                 end,
             }
         })
+
+        vim.diagnostic.config({
+            virtual_text = true,
+            float = {
+                focusable = false,
+                style = "minimal",
+                border = "rounded",
+                header = "",
+                prefix = "",
+            },
+        })
     end
 }

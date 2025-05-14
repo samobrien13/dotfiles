@@ -1,34 +1,35 @@
 return {
     "stevearc/conform.nvim",
-    event = { "BufWritePre" },
-    cmd = { "ConformInfo" },
-    keys = {
-        {
-            "<leader>f",
-            function()
-                require("conform").format({ async = true })
-            end,
-            mode = "",
-            desc = "Format buffer",
-        },
-    },
-    opts = {
-        formatters_by_ft = {
-            lua = { "stylua" },
-            javascript = { "prettierd", "prettier", stop_after_first = true },
-            ruby = { "rubocop" },
-        },
-        default_format_opts = {
-            lsp_format = "fallback",
-        },
-        format_on_save = { timeout_ms = 500 },
-        formatters = {
-            shfmt = {
-                prepend_args = { "-i", "2" },
+    event = { "BufReadPre", "BufNewFile" },
+    config = function()
+        local conform = require("conform")
+
+        conform.setup({
+            formatters_by_ft = {
+                javascript = { "prettier" },
+                typescript = { "prettier" },
+                javascriptreact = { "prettier" },
+                typescriptreact = { "prettier" },
+                css = { "prettier" },
+                html = { "prettier" },
+                json = { "prettier" },
+                yaml = { "prettier" },
+                markdown = { "prettier" },
+                lua = { "stylua" },
             },
-        },
-    },
-    init = function()
-        vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
+            format_on_save = {
+                lsp_fallback = true,
+                async = false,
+                timeout_ms = 1000,
+            },
+        })
+
+        vim.keymap.set({ "n", "v" }, "<leader>f", function()
+            conform.format({
+                lsp_fallback = true,
+                async = false,
+                timeout_ms = 1000,
+            })
+        end, { desc = "Format file or range (in visual mode)" })
     end,
 }

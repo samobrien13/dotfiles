@@ -6,9 +6,22 @@ return {
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 		{
 			"saghen/blink.cmp",
-			dependencies = { "rafamadriz/friendly-snippets" },
+			dependencies = {
+				"Kaiser-Yang/blink-cmp-avante",
+				"rafamadriz/friendly-snippets",
+			},
 			version = "1.*",
 			opts = {
+				default = { "avante", "lsp", "path", "luasnip", "buffer" },
+				providers = {
+					avante = {
+						module = "blink-cmp-avante",
+						name = "Avante",
+						opts = {
+							-- options for blink-cmp-avante
+						},
+					},
+				},
 				keymap = { preset = "default" },
 				appearance = {
 					nerd_font_variant = "mono",

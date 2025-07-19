@@ -36,13 +36,38 @@ return {
 							name = "Avante",
 						},
 					},
-					keymap = { preset = "default" },
-					appearance = {
-						nerd_font_variant = "mono",
+				},
+				keymap = { preset = "default" },
+				appearance = {
+					nerd_font_variant = "mono",
+				},
+				fuzzy = { implementation = "prefer_rust_with_warning" },
+				completion = {
+					documentation = {
+						auto_show = true,
 					},
-					fuzzy = { implementation = "prefer_rust_with_warning" },
+					menu = {
+						border = "rounded",
+						draw = {
+							columns = {
+								{ "kind_icon", "kind", gap = 1 },
+								{ "label", "label_description", gap = 1 },
+							},
+							components = {
+								label_description = {
+									width = { max = 50 },
+								},
+								source_name = {
+									text = function(ctx)
+										return "[" .. ctx.source_name .. "]"
+									end,
+								},
+							},
+						},
+					},
 				},
 			},
+			opts_extend = { "sources.default" },
 		},
 		{
 			"folke/lazydev.nvim",
@@ -53,12 +78,19 @@ return {
 				},
 			},
 		},
+		{
+			"youyoumu/pretty-ts-errors.nvim",
+			opts = {
+				auto_open = true,
+			},
+		},
 	},
 	config = function()
 		local capabilities = vim.tbl_deep_extend("force", {}, vim.lsp.protocol.make_client_capabilities())
 
 		require("mason").setup()
 		require("mason-lspconfig").setup({
+			automatic_enable = true,
 			ensure_installed = {
 				"cssmodules_ls",
 				"tailwindcss",

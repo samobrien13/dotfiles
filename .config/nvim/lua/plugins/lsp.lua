@@ -8,7 +8,6 @@ return {
 			"saghen/blink.cmp",
 			dependencies = {
 				{ "L3MON4D3/LuaSnip", version = "v2.*" },
-				"Kaiser-Yang/blink-cmp-avante",
 				"rafamadriz/friendly-snippets",
 				"solidjs-community/solid-snippets",
 			},
@@ -29,13 +28,7 @@ return {
 					end,
 				},
 				sources = {
-					default = { "avante", "lsp", "path", "buffer" },
-					providers = {
-						avante = {
-							module = "blink-cmp-avante",
-							name = "Avante",
-						},
-					},
+					default = { "lsp", "path", "buffer" },
 				},
 				keymap = { preset = "default" },
 				appearance = {
@@ -81,7 +74,7 @@ return {
 		{
 			"youyoumu/pretty-ts-errors.nvim",
 			opts = {
-				auto_open = true,
+				auto_open = false,
 			},
 		},
 	},

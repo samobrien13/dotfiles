@@ -1,5 +1,5 @@
 # Set GIT_HOME folder
-export GIT_HOME=/Users/samobien/Documents/git
+export GIT_HOME=$HOME/Documents/git
 
 # export LC_CTYPE=C
 # export LANG=C
@@ -12,7 +12,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # pnpm
-export PNPM_HOME="/Users/samobrien/Library/pnpm"
+export PNPM_HOME=$HOME/.local/share/mise/installs/pnpm
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
@@ -33,13 +33,13 @@ export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/samobrien/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Java
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"
 
-# asdf
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
+# mise
+eval "$(/Users/samobrien/.local/bin/mise activate zsh)"
 
 export COREPACK_ENABLE_AUTO_PIN=0
 
@@ -58,10 +58,8 @@ eval "$(direnv hook zsh)"
 export PATH=$HOME/.local/scripts:$PATH
 bindkey -s ^f "tmux-sessionizer\n"
 
-# Init RBENV
-# export PATH=~/.rbenv/shims:$PATH
-# export PATH=~/.rbenv/completions/rbenv.zsh:$PATH
-# eval "$(rbenv init -)"
+# Ruby
+export RUBYOPT="-r$HOME/.rubyopenssl_default_store.rb $RUBYOPT"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -155,4 +153,5 @@ export EDITOR="nvim"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 

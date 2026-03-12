@@ -153,5 +153,11 @@ export EDITOR="nvim"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Tailscale
 alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 
+# Playwright
+export BROWSER='open -a "Google Chrome"'
+
+# Load secrets
+[ -f ~/.secrets ] && source ~/.secrets

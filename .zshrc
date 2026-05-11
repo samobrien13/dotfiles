@@ -41,6 +41,9 @@ export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"
 # mise
 eval "$(/Users/samobrien/.local/bin/mise activate zsh)"
 
+# Rust
+export PATH=$PATH:~/.cargo/bin/
+
 export COREPACK_ENABLE_AUTO_PIN=0
 
 if [ -z "$TMUX" ]

@@ -8,6 +8,10 @@ alias tmux='tmux -u'
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+## Agents
+# Pi
+PI_CODING_AGENT_DIR=$XDG_CONFIG_HOME/pi
+
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 

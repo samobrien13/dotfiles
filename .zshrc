@@ -10,7 +10,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 ## Agents
 # Pi
-PI_CODING_AGENT_DIR=$HOME/.config/pi
+export PI_CODING_AGENT_DIR=$HOME/.config/pi
 
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"

@@ -16,10 +16,10 @@ export PI_CODING_AGENT_DIR=$HOME/.config/pi/agent
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # pnpm
-export PNPM_HOME=$HOME/.local/share/mise/installs/pnpm
+export PNPM_HOME="/Users/samobrien/.local/share/mise/installs/pnpm"
 case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
 esac
 # pnpm end
 
@@ -168,3 +168,4 @@ export BROWSER='open -a "Google Chrome"'
 
 # Load secrets
 [ -f ~/.secrets ] && source ~/.secrets
+

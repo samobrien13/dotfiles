@@ -3,6 +3,6 @@
   "defaultModel": "claude-opus-4.6",
   "defaultThinkingLevel": "medium",
   "theme": "dark",
-  "lastChangelogVersion": "0.75.1",
+  "lastChangelogVersion": "0.75.5",
   "packages": []
 }

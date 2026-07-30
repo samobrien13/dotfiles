@@ -27,6 +27,7 @@ return {
 			markdown = { "prettierd" },
 			ruby = { "rubocop" },
 			lua = { "stylua" },
+			kotlin = { "ktlint" },
 		},
 		default_format_opts = {
 			lsp_format = "fallback",

@@ -11,11 +11,19 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# pnpm
+# pnpm 11
+# export PNPM_HOME="/Users/samobrien/.local/share/mise/installs/pnpm"
+# case ":$PATH:" in
+#   *":$PNPM_HOME/bin:"*) ;;
+#   *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+# esac
+# pnpm end
+
+# pnpm 10
 export PNPM_HOME="/Users/samobrien/.local/share/mise/installs/pnpm"
 case ":$PATH:" in
-  *":$PNPM_HOME/bin:"*) ;;
-  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
 

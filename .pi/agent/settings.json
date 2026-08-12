@@ -1,8 +1,12 @@
 {
   "defaultProvider": "anthropic",
-  "defaultModel": "claude-opus-4-6",
+  "defaultModel": "claude-opus-4-7",
   "defaultThinkingLevel": "medium",
   "theme": "dark",
-  "lastChangelogVersion": "0.80.7",
-  "packages": []
+  "lastChangelogVersion": "0.84.0",
+  "packages": [
+    "npm:pi-mcp-adapter",
+    "npm:pi-figma-remote-auth",
+    "../../git/mosh/engineering-ai-marketplace/plugins/msh-plugin"
+  ]
 }

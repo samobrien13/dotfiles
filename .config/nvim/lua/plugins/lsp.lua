@@ -110,6 +110,16 @@ return {
 						},
 					})
 				end,
+				["tailwindcss"] = function()
+					local lspconfig = require("lspconfig")
+					lspconfig.tailwindcss.setup({
+						settings = {
+							tailwindCSS = {
+								classFunctions = { "cva", "cx" },
+							},
+						},
+					})
+				end,
 			},
 		})
 		require("mason-tool-installer").setup({

@@ -8,4 +8,7 @@
 1. `git clone https://github.com/samobrien13/dotfiles.git`
 2. `brew install stow`
 3. `cd dotfiles`
-4. `stow . -D $HOME`
+4. `make install`
+
+- make uninstall → remove links
+- make reinstall → refresh after adding new files

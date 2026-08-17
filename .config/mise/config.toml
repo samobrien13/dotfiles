@@ -1,0 +1,6 @@
+[tools]
+ruby = "3.4.9"
+nodejs = "24"
+golang = "1.25.1"
+java = "temurin-25"
+

@@ -217,4 +217,5 @@ automatically-unhide-macos-hidden-apps = false
     p = 'secondary'
     s = 'secondary'
     1 = 'secondary'
+    m = 'secondary'
     2 = 'main'

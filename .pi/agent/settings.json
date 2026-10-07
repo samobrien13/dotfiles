@@ -1,12 +1,33 @@
 {
   "defaultProvider": "anthropic",
-  "defaultModel": "claude-opus-4-7",
+  "defaultModel": "claude-opus-5-5",
   "defaultThinkingLevel": "medium",
   "theme": "dark",
-  "lastChangelogVersion": "0.84.0",
+  "lastChangelogVersion": "0.87.1",
   "packages": [
     "npm:pi-mcp-adapter",
     "npm:pi-figma-remote-auth",
-    "../../git/mosh/engineering-ai-marketplace/plugins/msh-plugin"
-  ]
+    "../../git/mosh/engineering-ai-marketplace/plugins/msh-plugin",
+    "npm:pi-subagents@0.76.1"
+  ],
+  "subagents": {
+    "agentOverrides": {
+      "implementer": {
+        "inheritProjectContext": true,
+        "inheritGlobalContext": true,
+        "inheritSkills": true
+      },
+      "tester": {
+        "tools": ["bash", "read", "grep", "find", "ls"],
+        "inheritProjectContext": true,
+        "inheritGlobalContext": true
+      },
+      "reviewer": {
+        "tools": ["bash", "read", "grep", "find", "ls"],
+        "inheritProjectContext": true,
+        "inheritGlobalContext": true,
+        "inheritSkills": true
+      }
+    }
+  }
 }

@@ -87,9 +87,6 @@ source $ZSH/oh-my-zsh.sh
 # Preferred editor for local and remote sessions
 export EDITOR="nvim"
 
-# Tailscale
-alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
-
 # Playwright
 export BROWSER='open -a "Google Chrome"'
 
